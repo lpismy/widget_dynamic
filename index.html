@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe id="flutter_widget" src="http://localhost:59613/"></iframe>
+
+    <button onclick="clickA()">点击</button>
+
+    <script>
+        function clickA() {
+            console.log('ffffffffffffff');
+            document.getElementById('flutter_widget').contentWindow.postMessage(
+                {
+                    sender: "main_page",
+                    message: "test"
+                },
+                "*"
+            );
+        }
+    </script>
+</body>
+</html>
